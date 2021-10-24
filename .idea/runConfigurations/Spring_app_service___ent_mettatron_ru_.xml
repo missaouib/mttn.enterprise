@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Spring-app-service: (ent.mettatron.ru)" type="docker-deploy" factoryName="docker-compose.yml" folderName="Ent.mettatron.ru" server-name="Docker - ent.mettaron.ru (production)">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="envFilePath" value="" />
+        <option name="commandLineOptions" value="--build" />
+        <option name="services">
+          <list>
+            <option value="spring-app-service" />
+          </list>
+        </option>
+        <option name="sourceFilePath" value="docker-compose.yaml" />
+        <option name="upDetach" value="false" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

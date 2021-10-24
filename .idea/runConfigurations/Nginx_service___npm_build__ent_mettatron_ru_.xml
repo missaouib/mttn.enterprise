@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Nginx-service:  npm build (ent.mettatron.ru)" type="docker-deploy" factoryName="docker-compose.yml" folderName="Ent.mettatron.ru" server-name="Docker - ent.mettaron.ru (production)">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="envFilePath" value="" />
+        <option name="commandLineOptions" value="--build" />
+        <option name="services">
+          <list>
+            <option value="nginx-service" />
+          </list>
+        </option>
+        <option name="sourceFilePath" value="docker-compose.yaml" />
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="NpmBeforeRunTask" enabled="true">
+        <package-json value="$PROJECT_DIR$/frontend/package.json" />
+        <command value="run" />
+        <scripts>
+          <script value="build" />
+        </scripts>
+        <node-interpreter value="project" />
+        <package-manager value="npm" />
+        <envs />
+      </option>
+    </method>
+  </configuration>
+</component>

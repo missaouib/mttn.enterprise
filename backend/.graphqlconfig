@@ -1,0 +1,16 @@
+{
+  "name": "Untitled GraphQL Schema",
+  "schemaPath": "./schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:8080/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL",
+          "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGFsaW4iLCJpc3MiOiJteS1ncmFwaHFsLWFwaSIsImV4cCI6MTYyNjAzMjkxNiwiaWF0IjoxNjI2MDI1NzE2fQ.paUYcPAIS6cWVzNIjimilGJcm-zneaoMAN-phdhTCGI"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

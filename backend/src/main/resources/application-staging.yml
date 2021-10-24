@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres-service:5432/mttn_enterprise
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    properties:
+      hibernate:
+        search:
+          backend:
+            hosts: elasticsearch-service:9200
+  servlet:
+    multipart:
+      max-file-size: "1GB"
+      max-request-size: "1GB"
+graphql:
+  servlet:
+    corsEnabled: false
+    exception-handlers-enabled: true
+  extended-scalars: Date, DateTime
+application:
+  allow-origins: "http://192.168.0.198"
+  document:
+    store-path: "/var/lib/spring-app/data/files/documents/"

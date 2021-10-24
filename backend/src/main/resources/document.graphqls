@@ -1,0 +1,39 @@
+extend type Query {
+    document(id:ID!): Document!
+    documents(offset: Int, limit: Int, sort:String, search:String): DocumentPage!
+}
+
+extend type Mutation {
+    createDocument(input:DocumentInput): Document
+    updateDocument(id: ID!, input:DocumentInput): Document
+    removeDocument(id:ID!):Boolean
+    uploadDocumentFile(file: Upload!, id:ID!): DocumentFile
+    removeDocumentFile(fileId:ID!):Boolean
+}
+
+type DocumentPage {
+    content: [Document]!
+    totalElements: Int!
+}
+
+input DocumentInput {
+    id:ID
+    title:String!
+    description:String
+    date:Date!
+}
+
+type Document {
+    id:ID!
+    title:String!
+    description:String
+    files: [DocumentFile]!
+    date:Date!
+}
+
+type DocumentFile {
+    id:ID!
+    name:String!
+    ocr:String!
+}
+

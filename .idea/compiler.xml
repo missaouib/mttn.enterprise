@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" procOnly="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false" useProcessorModulePath="true">
+          <entry name="$PROJECT_DIR$/../../Gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.5.2/69da26fe0e896d89feb388c425947c34416fde2e/spring-boot-configuration-processor-2.5.2.jar" />
+        </processorPath>
+      </profile>
+      <profile name="Gradle Imported" enabled="true" procOnly="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false" useProcessorModulePath="true">
+          <entry name="$PROJECT_DIR$/../../Gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/2.5.2/69da26fe0e896d89feb388c425947c34416fde2e/spring-boot-configuration-processor-2.5.2.jar" />
+        </processorPath>
+        <module name="backend.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="12" />
+  </component>
+</project>

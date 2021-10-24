@@ -1,0 +1,68 @@
+version: '3.9'
+services:
+
+  # nginx-service (frontend)
+  nginx-service:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: nginx-service
+    container_name: nginx-service
+    depends_on:
+      - "spring-app-service"
+    ports:
+      - "80:80"
+    restart: "always"
+
+  # spring-app-service (backend)
+  spring-app-service:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: spring-app-service
+    ports:
+      - "8080:8080"
+    container_name: spring-app-service
+    depends_on:
+      - "postgres-service"
+      - "elasticsearch-service"
+    restart: "always"
+    volumes:
+      - spring-app-volume:/var/lib/spring-app/data
+    environment:
+      - SPRING_PROFILES_ACTIVE
+
+  # postgres-service (db)
+  postgres-service:
+    image: postgres:13.4-alpine
+    container_name: postgres-service
+    hostname: postgres-service
+    ports:
+      - "127.0.0.1:5432:5432"
+    restart: "always"
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    environment:
+      #POSTGRES_DB: mttn_enterprise
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+  # elasticsearch-service (search)
+  elasticsearch-service:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+    container_name: elasticsearch-service
+    hostname: elasticsearch-service
+    ports:
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
+    restart: "always"
+    volumes:
+      - elasticsearch-volume:/usr/share/elasticsearch/data
+    environment:
+      - discovery.type=single-node
+
+# volumes
+volumes:
+  spring-app-volume:
+  postgres-volume:
+  elasticsearch-volume:

@@ -1,0 +1,25 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All services: bootJar, npm build (ent.mettatron.ru)" type="docker-deploy" factoryName="docker-compose.yml" folderName="Ent.mettatron.ru" server-name="Docker - ent.mettaron.ru (production)">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="envFilePath" value="" />
+        <option name="removeImagesOnComposeDown" value="ALL" />
+        <option name="commandLineOptions" value="--build" />
+        <option name="sourceFilePath" value="docker-compose.yaml" />
+      </settings>
+    </deployment>
+    <method v="2">
+      <option name="Gradle.BeforeRunTask" enabled="false" tasks="bootJar" externalProjectPath="$PROJECT_DIR$/backend" vmOptions="" scriptParameters="" />
+      <option name="NpmBeforeRunTask" enabled="true">
+        <package-json value="$PROJECT_DIR$/frontend/package.json" />
+        <command value="run" />
+        <scripts>
+          <script value="build" />
+        </scripts>
+        <node-interpreter value="project" />
+        <package-manager value="npm" />
+        <envs />
+      </option>
+    </method>
+  </configuration>
+</component>
